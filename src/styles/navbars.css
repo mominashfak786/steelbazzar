@@ -1,0 +1,60 @@
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #f0f0f0;
+  }
+  
+  .navbar div {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: black !important;
+  }
+  
+  .navbar div:last-child {
+    cursor: pointer;
+  }
+  
+  .navbar div:last-child:hover {
+    text-decoration: underline;
+    color: black !important;
+
+  }
+  
+  .navbar img {
+    width: 1.5rem;
+    align-items: center;
+    margin-top: 0.8rem;
+    height: 1.5rem;
+    margin-left: 0.5rem;
+  }
+  
+
+   
+  .cardvalues {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .ctr{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 50px;
+    margin-left: 10px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s ease-in-out;
+   
+   margin:20px 50px 50px 50px
+
+  }
+  
+ 
+  
