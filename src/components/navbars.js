@@ -25,37 +25,8 @@ const Navbar = () => {
             <div className="ctr">Work-data</div>
            
           </div>
-
           <div className="row">
-          <div className="ctr">Work-data</div>
             <div className="ctr">Work-data</div>
-            <div className="ctr">Work-data</div>
-            <div className="ctr">Work-data</div>
-          
-          </div>
-          <div className="row">
-          <div className="ctr">Work-data</div>
-            <div className="ctr">Work-data</div>
-            <div className="ctr">Work-data</div>
-            <div className="ctr">Work-data</div>
-           
-          </div>
-          <div className="row">
-          <div className="ctr">Work-data</div>
-            <div className="ctr">Work-data</div>
-            <div className="ctr">Work-data</div>
-            <div className="ctr">Work-data</div>
-            
-          </div>
-          <div className="row">
-          <div className="ctr">Work-data</div>
-            <div className="ctr">Work-data</div>
-            <div className="ctr">Work-data</div>
-            <div className="ctr">Work-data</div>
-           
-          </div>
-          <div className="row">
-          <div className="ctr">Work-data</div>
             <div className="ctr">Work-data</div>
             <div className="ctr">Work-data</div>
             <div className="ctr">Work-data</div>
@@ -63,14 +34,7 @@ const Navbar = () => {
           </div>
           
 
-          
-          <div className="row">
-          <div className="ctr">Work-data</div>
-            <div className="ctr">Work-data</div>
-            <div className="ctr">Work-data</div>
-            <div className="ctr">Work-data</div>
-            
-          </div>
+        
         </div>
       </div>
     </>
