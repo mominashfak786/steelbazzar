@@ -1,61 +1,132 @@
-
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    background-color: #f0f0f0;
-  }
-  
-  .navbar div {
-    display: flex;
-    align-items: center;
-    font-size: 1.5rem;
-    font-weight: 500;
-    color: black !important;
-  }
-  
-  .navbar div:last-child {
-    cursor: pointer;
-  }
-  
-  .navbar div:last-child:hover {
-    text-decoration: underline;
-    color: black !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  box-shadow: -4px 8px 8px rgba(0, 0, 0, 0.1);
+}
 
-  }
-  
-  .navbar img {
-    width: 1.5rem;
-    align-items: center;
-    margin-top: 0.8rem;
-    height: 1.5rem;
-    margin-left: 0.5rem;
-  }
-  
+.navbar div {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: black !important;
+}
 
-   
-  .cardvalues {
-    display: flex;
+.navbar img {
+  align-items: center;
+}
+
+.maincontainer {
+  margin: 80px 90px 20px 90px;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, auto);
+  gap: 45px;
+}
+
+/* Style the grid items */
+.grid-item {
+  background-color: #000000;
+  color: white;
+  padding: 25px;
+  cursor: pointer;
+  font-size: 20px;
+  display: flex;
+  border-radius: 5px;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none !important;
+}
+
+/* Add some hover effects */
+.grid-item:hover {
+  transform: scale(1.1); /* Make the item bigger */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add some shadow */
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slide-right {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+.grid-item:nth-child(1),
+.grid-item:nth-child(2),
+.grid-item:nth-child(5),
+.grid-item:nth-child(6),
+.grid-item:nth-child(10) {
+  animation: slide 1s; /* Slide in from the left */
+}
+
+.grid-item:not(.grid-item:nth-child(1), .grid-item:nth-child(2), .grid-item:nth-child(5), .grid-item:nth-child(6), .grid-item:nth-child(10)) {
+  animation: slide-right 1s; /* Slide in from the right */
+}
+
+@media only screen and (max-width: 768px) {
+  /* For small screens, make the grid items stack on top of each other */
+  .grid-container {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(12, auto);
+    gap: 25px;
+  }
+  .grid-item1 {
+    display: none;
+  }
+
+  .bts {
+    display: flex !important; /* Make it a block element */
     align-items: center;
     justify-content: center;
-
+    text-decoration-line: none;
+    padding: 9px 12px !important;
+    margin-top: 10px;
+    border: none;
+    text-decoration: none !important;
+    text-decoration: underline !important;
   }
-  .ctr{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100px;
-    height: 50px;
-    margin-left: 10px;
-    background-color: #ffffff;
-    border-radius: 5px;
-    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.3);
-    transition: box-shadow 0.3s ease-in-out;
-   
-   margin:20px 50px 50px 50px
-
+  .bts:hover {
+    transform: scale(1) !important; /* Make the button bigger */
   }
-  
- 
-  
+}
+.bts {
+  display: inline-block; /* Make it a block element */
+  padding: 10px 20px; /* Add some padding */
+  background-color: #33b5e5; /* Add a background color */
+  color: white; /* Add a text color */
+  border: none; /* Remove the border */
+  border-radius: 5px; /* Add rounded corners */
+  cursor: pointer; /* Change the cursor on hover */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a shadow effect */
+  margin-right: 40px;
+}
+
+/* Add a hover effect */
+.bts:hover {
+  transform: scale(1.1); /* Make the button bigger */
+}
+
+/* Add an active effect */
+.bts:active {
+  transform: scale(0.9); /* Make the button smaller */
+}
+
+/* Style the icon */
+.bts i {
+  margin-left: 15px; /* Add some space between the text and the icon */
+}

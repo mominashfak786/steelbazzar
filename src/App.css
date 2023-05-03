@@ -41,3 +41,9 @@
   body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif !important;
   }
+  .okss{
+    text-align: center;
+    margin-top: 8em;
+    font-weight: 900;
+    font-size: xx-large;
+  }

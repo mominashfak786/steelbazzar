@@ -40,7 +40,7 @@ const login = () => {
     <input placeholder="Password" className="input-field" type="password" />
   </div>
   <div className="btn">
-  <Link to="/Navbar" > <button className="button1">
+  <Link to="/dashboard" > <button className="button1">
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Login&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     </button></Link>
    <Link to="/create" ><button className="button2">Sign Up</button></Link>
