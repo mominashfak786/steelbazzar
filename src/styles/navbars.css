@@ -94,11 +94,12 @@
     align-items: center;
     justify-content: center;
     text-decoration-line: none;
-    padding: 9px 12px !important;
+    padding: 9px 11px !important;
     margin-top: 10px;
     border: none;
     text-decoration: none !important;
     text-decoration: underline !important;
+   
   }
   .bts:hover {
     transform: scale(1) !important; /* Make the button bigger */
