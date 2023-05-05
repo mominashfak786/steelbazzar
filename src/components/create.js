@@ -39,7 +39,7 @@ const Create = () => {
           <div className="inputBox1">
             <input
               type="text"
-              required=""
+              required="required"
               name="name"
               value={formData.name}
               onChange={handleInputChange}
@@ -49,7 +49,7 @@ const Create = () => {
           <div className="inputBox">
             <input
               type="text"
-              required=""
+              required="required"
               name="businessName"
               value={formData.businessName}
               onChange={handleInputChange}
@@ -59,7 +59,7 @@ const Create = () => {
           <div className="inputBox1">
             <input
               type="text"
-              required=""
+              required="required"
               name="gstNo"
               value={formData.gstNo}
               onChange={handleInputChange}
@@ -69,7 +69,7 @@ const Create = () => {
           <div className="inputBox1">
             <input
               type="text"
-              required=""
+              required="required"
               name="email"
               value={formData.email}
               onChange={handleInputChange}
@@ -79,7 +79,7 @@ const Create = () => {
           <div className="inputBox">
             <input
               type="text"
-              required=""
+              required="required"
               name="mobileNo"
               value={formData.mobileNo}
               onChange={handleInputChange}
@@ -89,7 +89,7 @@ const Create = () => {
           <div className="inputBox">
             <input
               type="password"
-              required=""
+              required="required"
               name="password"
               value={formData.password}
               onChange={handleInputChange}
