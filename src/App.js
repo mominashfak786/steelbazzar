@@ -19,7 +19,6 @@ function App() {
       {loadingComplete && (
         <>
           <Login />
-          <Create />
         </>
       )}
     </div>
