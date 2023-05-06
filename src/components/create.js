@@ -1,102 +1,80 @@
-import React, { useState } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
 import "../styles/create.css";
-import axios from 'axios';
 
 const Create = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    businessName: '',
-    gstNo: '',
-    email: '',
-    mobileNo: '',
-    password: ''
-  });
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const name = e.target.name.value;
+    const businessName = e.target.businessName.value;
+    const gstNo = Number(e.target.gstNo.value);
+    const email = e.target.email.value;
+    const phone = Number(e.target.mobileNo.value);
+    const password = e.target.password.value;
 
-  function handleInputChange(event) {
-    const { name, value } = event.target;
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      [name]: value
-    }));
-  }
+    const formData = {
+      name: name,
+      businessName: businessName,
+      gst: gstNo,
+      email: email,
+      phone: phone,
+      password: password,
+    };
 
-  function handleSubmit(event) {
-    event.preventDefault();
-    axios.post('/create', formData)
-      .then(() => {
-        window.location.href = '/dashboard';
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }
-  
+    fetch(
+      "https://steelbazarbackend-takdirhossain.vercel.app/api/auth/register",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      }
+    )
+    .then((res) => res.json())
+    .then((data) => {
+      console.log("login complete");
+    });
+  };
+
   return (
     <>
       <div className="containercreate">
         <form className="card" onSubmit={handleSubmit}>
-          <div className="singup">Sign Up</div>
+          <div className="singup">Sign Up
+         
+            </div>
           <div className="inputBox1">
-            <input
-              type="text"
-              required="required"
-              name="name"
-              value={formData.name}
-              onChange={handleInputChange}
-            />
+            <input type="text" required="required" name="name" />
             <span className="user">Name</span>
           </div>
           <div className="inputBox">
-            <input
-              type="text"
-              required="required"
-              name="businessName"
-              value={formData.businessName}
-              onChange={handleInputChange}
-            />
+            <input type="text" required="required" name="businessName" />
             <span className="user">Business Name</span>
           </div>
           <div className="inputBox1">
-            <input
-              type="text"
-              required="required"
-              name="gstNo"
-              value={formData.gstNo}
-              onChange={handleInputChange}
-            />
+            <input type="text" required="required" name="gstNo" />
             <span className="user">GST No</span>
           </div>
           <div className="inputBox1">
-            <input
-              type="text"
-              required="required"
-              name="email"
-              value={formData.email}
-              onChange={handleInputChange}
-            />
+            <input type="text" required="required" name="email" />
             <span className="user">Email</span>
           </div>
           <div className="inputBox">
-            <input
-              type="text"
-              required="required"
-              name="mobileNo"
-              value={formData.mobileNo}
-              onChange={handleInputChange}
-            />
+            <input type="text" required="required" name="mobileNo" />
             <span>Mobile No</span>
           </div>
           <div className="inputBox">
             <input
               type="password"
-              required="required"
+              required
               name="password"
-              value={formData.password}
-              onChange={handleInputChange}
+              autocomplete="current-password"
             />
             <span>Password</span>
           </div>
-          <button type="submit" className="enter">
+
+          <button type="submit" className="enter" button="submit">
             Sign Up
           </button>
         </form>

@@ -8,7 +8,7 @@ const Dashboard = () => {
     <>
       <div className="mainthing">
         <div className="navbar">
-          <img
+        <Link to="/"><img
             src={Logo}
             alt=""
             style={{
@@ -17,7 +17,7 @@ const Dashboard = () => {
               marginBottom: "5px",
               cursor: "pointer",
             }}
-          />
+          /> </Link>
           <div>
             <Link to="/">
               <span class="bts">

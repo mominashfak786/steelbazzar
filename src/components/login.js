@@ -1,27 +1,43 @@
 import React from "react";
 import "../styles/login.css";
-import { useState } from "react";
 import { Link } from "react-router-dom";
 const Login = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
 
-  const handleUsernameChange = (event) => {
-    setUsername(event.target.value);
+    const formData = {
+      email: email,
+      password: password,
+    };
+
+    fetch(
+      "https://steelbazarbackend-takdirhossain.vercel.app/api/auth/login",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      }
+    )
+    .then((res) => res.json())
+    .then((data) => {
+      console.log("login complete");
+    })
+    .catch((error) => {
+      console.error("Error fetching data:", error);
+    });
+    
   };
 
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
-  };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // Handle login logic with username and password
-  };
+
   return (
     <>
       <div className="loginform">
-        <form className="form" onSubmit={handleSubmit} acton="/" method="post">
+        <form className="form" onSubmit={handleSubmit}>
           <p id="heading">Login</p>
 
           <div className="field">
@@ -39,9 +55,9 @@ const Login = () => {
               autoComplete="off"
               placeholder="Username"
               className="input-field"
+              required="required"
+              name="email"
               type="text"
-              value={username}
-              onChange={handleUsernameChange}
             />
           </div>
           <div className="field">
@@ -59,18 +75,16 @@ const Login = () => {
             <input
               placeholder="Password"
               className="input-field"
+              required="required"
+              name="password"
               type="password"
-              value={password}
-              onChange={handlePasswordChange}
             />
           </div>
           <div className="btn">
-            <Link to="/dashboard">
-              {" "}
-              <button type="submit" className="button1">
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Login&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              </button>{" "}
-            </Link>
+            {" "}
+       <Link to="/dashboard">   <button type="submit" className="button1">
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Login&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </button>{" "}</Link>  
             <Link to="/create">
               <button className="button2">Sign Up</button>
             </Link>
