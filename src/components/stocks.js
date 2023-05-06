@@ -1,19 +1,165 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import "../styles/stocks.css";
-function GP() {
-  return (
-    <div>
-      <h2>GP Page</h2>
-      <div>
-        {" "}
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure blanditiis
-        necessitatibus atque deleniti accusamus nostrum dolorem modi
-        consequuntur dolor eveniet! Exercitationem ab eos recusandae? Commodi
-        corrupti obcaecati temporibus numquam iusto!
-      </div>
-    </div>
-  );
-}
+function GP() {  const [data, setData] = useState([]);
+
+const [editing, setEditing] = useState(false);
+const initialFormState = {
+  id: null,
+  status: '',
+  company: '',
+  thickness: '',
+  weight: '',
+  pieces: '',
+  average: '',
+  closingWt: '',
+  closingPcs: '',
+};
+const [currentData, setCurrentData] = useState(initialFormState);
+
+const addData = (newData) => {
+  newData.id = data.length + 1;
+  setData([...data, newData]);
+};
+
+const deleteData = (id) => {
+  setData(data.filter((d) => d.id !== id));
+};
+
+const updateData = (id, updatedData) => {
+  setEditing(false);
+  setData(data.map((d) => (d.id === id ? updatedData : d)));
+};
+
+const editRow = (d) => {
+  setEditing(true);
+  setCurrentData({
+    id: d.id,
+    status: d.status,
+    company: d.company,
+    thickness: d.thickness,
+    weight: d.weight,
+    pieces: d.pieces,
+    average: d.average,
+    closingWt: d.closingWt,
+    closingPcs: d.closingPcs,
+  });
+};
+
+const handleSubmit = (event) => {
+  event.preventDefault();
+  if (editing) {
+    updateData(currentData.id, currentData);
+  } else {
+    addData(currentData);
+  }
+  setCurrentData(initialFormState);
+};
+
+const handleInputChange = (event) => {
+  const { name, value } = event.target;
+  setCurrentData({ ...currentData, [name]: value });
+};
+
+return (
+  <div>
+    <h2>GP</h2>
+    <form onSubmit={handleSubmit} className='opps'>
+  <input
+    type='text'
+    name='status'
+    value={currentData.status}
+    onChange={handleInputChange}
+    style={{ width: '8.5vw' }}
+  />
+  <input
+    type='text'
+    name='company'
+    value={currentData.company}
+    onChange={handleInputChange}
+    style={{ width: '11.6vw' }}
+  />
+  <input
+    type='text'
+    name='thickness'
+    value={currentData.thickness}
+    onChange={handleInputChange}
+    style={{ width: '11.8vw' }}
+  />
+  <input
+    type='text'
+    name='weight'
+    value={currentData.weight}
+    onChange={handleInputChange}
+    style={{ width: '9.5vw' }}
+  />
+  <input
+    type='text'
+    name='pieces'
+    value={currentData.pieces}
+    onChange={handleInputChange}
+    style={{ width: '8.4vw' }}
+  />
+  <input
+    type='text'
+    name='average'
+    value={currentData.average}
+    onChange={handleInputChange}
+    style={{ width: '10.4vw' }}
+  />
+  <input
+    type='text'
+    name='closingWt'
+    value={currentData.closingWt}
+    onChange={handleInputChange}
+    style={{ width: '13.3vw' }}
+  />
+  <input
+    type='text'
+    name='closingPcs'
+    value={currentData.closingPcs}
+    onChange={handleInputChange}
+    style={{ width: '13.8vw' }}
+  />
+  <button type='submit' className="btn btn-outline-dark" style={{ marginLeft: '10px',marginBottom:'10px' }}>{editing ? 'Update' : 'Create'}</button>
+</form>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Status</th>
+        <th>Company</th>
+        <th>Thickness</th>
+        <th>Weight</th>
+        <th>Pieces</th>
+        <th>Average</th>
+        <th>Closing Wt.</th>
+        <th>Closing Pcs.</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {data.map((d) => (
+        <tr key={d.id}>
+          <td>{d.status}</td>
+          <td>{d.company}</td>
+          <td>{d.thickness}</td>
+          <td>{d.weight}</td>
+          <td>{d.pieces}</td>
+          <td>{d.average}</td>
+          <td>{d.closingWt}</td>
+          <td>{d.closingPcs}</td>
+          <td>
+            <button onClick={() => editRow(d)}>Edit</button>
+            <button onClick={() => deleteData(d.id)}>Delete</button>
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+);
+};
+  
 
 function CR() {
   return (
@@ -448,37 +594,34 @@ function Stocks() {
 
   return (
     <div className="mainmaincontainers">
-      <div className="smallcontainers">
-        <div className="button-container">
-          <button onClick={() => handlePageClick("GP")}>GP</button>
-          <button onClick={() => handlePageClick("CR")}>CR</button>
-          <button onClick={() => handlePageClick("GC8FT")}>GC 8 FT</button>
-          <button onClick={() => handlePageClick("GC8X4")}>GC 8 X 4</button>
-          <button onClick={() => handlePageClick("GC10FT")}>GC 10 FT</button>
-          <button onClick={() => handlePageClick("GC10X4")}>GC 10 X 4</button>
-          <button onClick={() => handlePageClick("GC12FT")}>GC 12 FT</button>
-          <button onClick={() => handlePageClick("GC12X4")}>GC 12 X 4</button>
-          <button onClick={() => handlePageClick("GC14FT")}>GC 14 FT</button>
-          <button onClick={() => handlePageClick("GC14X4")}>GC 14 X 4</button>
-          <button onClick={() => handlePageClick("GC16FT")}>GC 16 FT</button>
-          <button onClick={() => handlePageClick("GC16X4")}>GC 16 X 4</button>
-          <button onClick={() => handlePageClick("ANGLE")}>ANGLE</button>
-          <button onClick={() => handlePageClick("CHANNEL")}>CHANNEL</button>
-          <button onClick={() => handlePageClick("JOIST")}>JOIST</button>
-          <button onClick={() => handlePageClick("CHQ_PLATE")}>
-            CHQ PLATE
-          </button>
-          <button onClick={() => handlePageClick("PLATE")}>PLATE</button>
-          <button onClick={() => handlePageClick("TMT")}>TMT</button>
-          <button onClick={() => handlePageClick("CC8FT")}>CC 8 FT</button>
-          <button onClick={() => handlePageClick("CC10FT")}>CC 10 FT</button>
-          <button onClick={() => handlePageClick("CC12FT")}>CC 12 FT</button>
-          <button onClick={() => handlePageClick("CC12FT")}>CC 14 FT</button>
-          <button onClick={() => handlePageClick("CC16FT")}>CC 16 FT</button>
-          <button onClick={() => handlePageClick("CC18FT")}>CC 18 FT</button>
-          {currentPageComponent}
-        </div>
+      <div className="button-container">
+        <button onClick={() => handlePageClick("GP")}>GP</button>
+        <button onClick={() => handlePageClick("CR")}>CR</button>
+        <button onClick={() => handlePageClick("GC8FT")}>GC 8 FT</button>
+        <button onClick={() => handlePageClick("GC8X4")}>GC 8 X 4</button>
+        <button onClick={() => handlePageClick("GC10FT")}>GC 10 FT</button>
+        <button onClick={() => handlePageClick("GC10X4")}>GC 10 X 4</button>
+        <button onClick={() => handlePageClick("GC12FT")}>GC 12 FT</button>
+        <button onClick={() => handlePageClick("GC12X4")}>GC 12 X 4</button>
+        <button onClick={() => handlePageClick("GC14FT")}>GC 14 FT</button>
+        <button onClick={() => handlePageClick("GC14X4")}>GC 14 X 4</button>
+        <button onClick={() => handlePageClick("GC16FT")}>GC 16 FT</button>
+        <button onClick={() => handlePageClick("GC16X4")}>GC 16 X 4</button>
+        <button onClick={() => handlePageClick("ANGLE")}>ANGLE</button>
+        <button onClick={() => handlePageClick("CHANNEL")}>CHANNEL</button>
+        <button onClick={() => handlePageClick("JOIST")}>JOIST</button>
+        <button onClick={() => handlePageClick("CHQ_PLATE")}>CHQ PLATE</button>
+        <button onClick={() => handlePageClick("PLATE")}>PLATE</button>
+        <button onClick={() => handlePageClick("TMT")}>TMT</button>
+        <button onClick={() => handlePageClick("CC8FT")}>CC 8 FT</button>
+        <button onClick={() => handlePageClick("CC10FT")}>CC 10 FT</button>
+        <button onClick={() => handlePageClick("CC12FT")}>CC 12 FT</button>
+        <button onClick={() => handlePageClick("CC12FT")}>CC 14 FT</button>
+        <button onClick={() => handlePageClick("CC16FT")}>CC 16 FT</button>
+        <button onClick={() => handlePageClick("CC18FT")}>CC 18 FT</button>
       </div>
+      
+      <div id="page-container">{currentPageComponent}</div>
     </div>
   );
 }

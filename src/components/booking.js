@@ -1,9 +1,9 @@
 import React from 'react'
-
+import Stocks from "./stocks"
 const booking = () => {
   return (
-    <div className='okss'>
-    Work remains to be done
+    <div >
+   <Stocks/>
 </div>
   )
 }
