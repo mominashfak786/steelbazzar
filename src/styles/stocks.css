@@ -7,46 +7,66 @@
   height: 100%;
   display: inline-block;
   margin-left: 300px;
-}
 
+}
 .button-container {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  max-width: 1100px;
-  margin: 0 auto;
+  max-width: 1050px;
+  margin: 10px auto;
   width: 95wh;
   height: min-content;
-  border: 1px solid black;
+  border: 1px solid rgb(0, 0, 0);
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 50px;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
 }
 
 .button-container button {
   padding: 10px;
   margin: 5px;
   border: none;
-  background-color: #2200ff;
+  background-color: #040404;
   color: #fff;
   font-size: 16px;
   cursor: pointer;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
 }
 
 .button-container button:hover {
   background-color: #ff0000;
+  box-shadow: 0px 0px 15px 0px rgba(255,0,0,0.75);
 }
 
+
 h2 {
- margin: 0 0 30px;
+ margin: 90px 0 30px;
   text-align: center;
 }
 #page-container {
   background-color: #ffffff;
   padding: 20px;
-  margin-top: 10px;
+  margin:-120px 15px 0px 15px;
   width: 95wh;
-  height: max-content;
+  max-height: max-content;
   border: 1px solid black;
+  border-radius: 15px;
 
+}
+.opps{
+  margin-bottom: 20px;
+  margin-left: 50px;
+  margin-right: 50px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  
 }
 
 /* crude table */
@@ -58,13 +78,13 @@ h2 {
 table {
   border-collapse: collapse;
   width: 100%;
-  font-size: 14px;
-  line-height: 1.5;
+  font-size: 17px;
+  line-height: 1.2;
 }
 
 th,
 td {
-  border: 1px solid #ddd;
+  border: 1.5px solid #000000;
   padding: 8px;
   text-align: left;
   text-align: center;
@@ -78,16 +98,9 @@ tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 
-tr:hover {
-  background-color: #ddd;
-}
-
-td:last-child {
-  text-align: center;
-}
 
 td:last-child button {
-  background-color: #333;
+  background-color: #000000;
   color: #fff;
   border: none;
   margin-right: 5px;
@@ -96,9 +109,7 @@ td:last-child button {
   cursor: pointer;
 }
 
-td:last-child button:hover {
-  background-color: #555;
-}
+
 
 @media only screen and (max-width: 768px) {
   input {
@@ -113,7 +124,33 @@ td:last-child button:hover {
     min-width: 80px;
   }
 }
-.opps{
-  margin-bottom: 20px;
-}
 
+
+/*  */
+.myButton {
+	box-shadow:inset 0px 1px 0px 0px #f29c93;
+	background:linear-gradient(to bottom, #fe1a00 5%, #ce0100 100%);
+	background-color:#fe1a00;
+	border-radius:6px;
+	border:1px solid #d83526;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:16px;
+	font-weight:bold;
+	padding:5px 28px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #b23e35;
+  margin-left: 8px;
+  margin-right: 0px;
+  
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #ce0100 5%, #fe1a00 100%);
+	background-color:#ce0100;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
