@@ -66,6 +66,7 @@ function GP() {
         <input
           type="text"
           name="status"
+          placeholder="Status"
           value={currentData.status}
           onChange={handleInputChange}
           style={{ width: "8.5vw" }}
@@ -73,6 +74,7 @@ function GP() {
         <input
           type="text"
           name="company"
+          placeholder="Company"
           value={currentData.company}
           onChange={handleInputChange}
           style={{ width: "10.6vw" }}
@@ -80,6 +82,7 @@ function GP() {
         <input
           type="text"
           name="thickness"
+          placeholder="Thickness"
           value={currentData.thickness}
           onChange={handleInputChange}
           style={{ width: "10.8vw" }}
@@ -87,6 +90,7 @@ function GP() {
         <input
           type="text"
           name="weight"
+          placeholder="Weight"
           value={currentData.weight}
           onChange={handleInputChange}
           style={{ width: "8.5vw" }}
@@ -94,6 +98,7 @@ function GP() {
         <input
           type="text"
           name="pieces"
+          placeholder="Pieces"
           value={currentData.pieces}
           onChange={handleInputChange}
           style={{ width: "7.4vw" }}
@@ -101,6 +106,7 @@ function GP() {
         <input
           type="text"
           name="average"
+          placeholder="Average"
           value={currentData.average}
           onChange={handleInputChange}
           style={{ width: "9.4vw" }}
@@ -108,6 +114,7 @@ function GP() {
         <input
           type="text"
           name="closingWt"
+          placeholder="ClosingWt"
           value={currentData.closingWt}
           onChange={handleInputChange}
           style={{ width: "12.3vw" }}
@@ -115,6 +122,7 @@ function GP() {
         <input
           type="text"
           name="closingPcs"
+          placeholder="ClosingPcs"
           value={currentData.closingPcs}
           onChange={handleInputChange}
           style={{ width: "11.8vw" }}

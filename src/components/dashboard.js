@@ -32,42 +32,42 @@ const Dashboard = () => {
               {" "}
               <div class="grid-item">STOCKS</div>
             </Link>
-            <Link to="/stocks" style={{ textDecoration: 'none' }}>
+            <Link to="/booking" style={{ textDecoration: 'none' }}>
               {" "}
               <div class="grid-item">BOOKINGS</div>
             </Link>
-            <Link to="/stocks" style={{ textDecoration: 'none' }}>
+            <Link to="/orders" style={{ textDecoration: 'none' }}>
               {" "}
               <div class="grid-item">ORDERS</div>
             </Link>
-            <Link to="/stocks" style={{ textDecoration: 'none' }}>
+            <Link to="/ratelistview" style={{ textDecoration: 'none' }}>
               {" "}
               <div class="grid-item">RATE LIST VIEW</div>
             </Link>
-            <Link to="/stocks" style={{ textDecoration: 'none' }}>
+            <Link to="/ratelist" style={{ textDecoration: 'none' }}>
               {" "}
               <div class="grid-item">RATE LIST</div>
             </Link>
-            <Link to="/stocks" style={{ textDecoration: 'none' }}>
+            <Link to="dailysales" style={{ textDecoration: 'none' }}>
               {" "}
               <div class="grid-item">DAILY SALES</div>
             </Link>
-            <Link to="/stocks" style={{ textDecoration: 'none' }}>
+            <Link to="/salesreport" style={{ textDecoration: 'none' }}>
               {" "}
               <div class="grid-item">SALES REPORT</div>
             </Link>
-            <Link to="/stocks" style={{ textDecoration: 'none' }}>
+            <Link to="/warehouse" style={{ textDecoration: 'none' }}>
               {" "}
               <div class="grid-item">WARE HOUSE</div>
             </Link>
             <div class="grid-item1"></div>
-            <Link to="/stocks" style={{ textDecoration: 'none' }}>
+            <Link to="/headofficeexpense" style={{ textDecoration: 'none' }}>
               {" "}
               <div class="grid-item">
                 HEAD OFFICE <br /> EXPENSES
               </div>
             </Link>
-            <Link to="/stocks" style={{ textDecoration: 'none' }}>
+            <Link to="/expensetracker" style={{ textDecoration: 'none' }}>
               {" "}
               <div class="grid-item">
                 EXPENSE <br /> TRACKER

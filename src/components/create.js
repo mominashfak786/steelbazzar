@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "../styles/create.css";
 
 const Create = () => {
@@ -60,11 +59,11 @@ const Create = () => {
             <input type="text" required="required" name="email" />
             <span className="user">Email</span>
           </div>
-          <div className="inputBox">
+          <div className="inputBox1">
             <input type="text" required="required" name="mobileNo" />
             <span>Mobile No</span>
           </div>
-          <div className="inputBox">
+          <div className="inputBox1">
             <input
               type="password"
               required
