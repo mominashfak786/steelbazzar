@@ -75,49 +75,49 @@ function GP() {
           name="company"
           value={currentData.company}
           onChange={handleInputChange}
-          style={{ width: "11.6vw" }}
+          style={{ width: "10.6vw" }}
         />
         <input
           type="text"
           name="thickness"
           value={currentData.thickness}
           onChange={handleInputChange}
-          style={{ width: "11.8vw" }}
+          style={{ width: "10.8vw" }}
         />
         <input
           type="text"
           name="weight"
           value={currentData.weight}
           onChange={handleInputChange}
-          style={{ width: "9.5vw" }}
+          style={{ width: "8.5vw" }}
         />
         <input
           type="text"
           name="pieces"
           value={currentData.pieces}
           onChange={handleInputChange}
-          style={{ width: "8.4vw" }}
+          style={{ width: "7.4vw" }}
         />
         <input
           type="text"
           name="average"
           value={currentData.average}
           onChange={handleInputChange}
-          style={{ width: "10.4vw" }}
+          style={{ width: "9.4vw" }}
         />
         <input
           type="text"
           name="closingWt"
           value={currentData.closingWt}
           onChange={handleInputChange}
-          style={{ width: "13.3vw" }}
+          style={{ width: "12.3vw" }}
         />
         <input
           type="text"
           name="closingPcs"
           value={currentData.closingPcs}
           onChange={handleInputChange}
-          style={{ width: "13.8vw" }}
+          style={{ width: "11.8vw" }}
         />
         <button type="submit" className="myButton">
           {editing ? "Update" : "Create"}
